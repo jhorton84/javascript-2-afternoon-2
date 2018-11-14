@@ -18,7 +18,7 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+var first = arr => arr[0]
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +33,7 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+var last = arr => arr[arr.length -1]
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +48,9 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+var looper = family => {
+  return family.forEach((val, i, arr) => alert(val));
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,6 +65,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+var reversedLooper = letters => {
+  for(let i = letters.length-1; i >= 0 ;i--){
+    alert(letters[i])
+  }
+}
 
 
 
@@ -78,7 +85,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+var evenFinder = nums => {
+  var evensArray = [];
+  nums.forEach(e => {
+    e % 2 === 0
+    ? evensArray.push(e)
+    : null;
+  })
+  return evensArray;
+}
 
 
 
@@ -106,7 +121,29 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+var evenFinder = numbersArray => {
+  var evensArray = [];
+  numbersArray.forEach(e => {
+    e % 2 === 0
+    ? evensArray.push(e)
+    : null;
+  })
+  return evensArray;
+}
 
+var divider = numbersArray => {
+  var evensArray = [];
+  var oddsArray = [];
+  numbersArray.forEach( e => {
+    e % 2 === 0
+    ? evensArray.push(e)
+    : oddsArray.push(e)
+  })
+  var newArray = [];
+  newArray.push(evensArray);
+  newArray.push(oddsArray);
+  return newArray;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -127,7 +164,12 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+var finder = arr => { 
+  return arr.indexOf(getRandomArbitrary())!=-1
+  ? true
+  : false;
+  
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -156,6 +198,34 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+var removeItem = (arr, item) => {
+  // return [];
+  if(arr && item){
+    var listIndex = arr.indexOf(item)
+    console.log('T$ is the bestest')
+    console.log(listIndex)
+    if( listIndex != -1){
+      arr.splice(listIndex, 1)
+    }else{
+      return arr;
+    }
+  }else{
+    return []
+  }
+  return arr;
+}
+// removeItem(myGroceryList, 'pizza')
+
+var addItem = (myGroceryList, item) => {
+  if(myGroceryList && item){
+    myGroceryList.push(item);
+    return myGroceryList;
+
+  }else{
+    return [];
+  }
+}
+
 
 
 
@@ -166,7 +236,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+maker = () => {
+  var myArray = [];
+  for(i=1; i<=215; i++){
+    myArray.push(i);
+  }
+  return myArray;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -182,6 +258,23 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+var addTen = numbers => {
+  var newArray = numbers.map((val,i,arr) => {
+    return parseInt(val) + 10
+  })
+  return newArray;
+}
+addTen(numbers);
+
+// val = 
+// i = 
+// arr = 
+// arr[i] = 
+var newNumbers = [1,2,3,4,5,6,7,8,9,10]
+
+var newArray = array.map((val,i,arr) => {
+
+})
 
 
 
@@ -207,7 +300,11 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var longer = (arr1, arr2) => {
+  return arr1.length > arr2.length
+  ? arr1
+  : arr2
+}
 
 
 /*
@@ -219,7 +316,15 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var both = (arr1, arr2) => {
+  var newArray = [];
+  arr1.forEach(e => {
+    if(arr2.indexOf(e) != -1){
+      newArray.push(e);
+    }
+  })
+  return newArray; 
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -259,7 +364,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees[0] = tyler;
+devMountainEmployees[1] = cahlan;
+devMountainEmployees[2] = ryan;
+devMountainEmployees[3] = colt;
+ 
 
 
 /*
@@ -268,7 +377,11 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.forEach((val, i, arr) => {
+  if(val.name == 'Cahlan'){
+    devMountainEmployees.splice(i, 1);
+  }
+})
 
 
 ////////// PROBLEM 13 //////////
@@ -280,7 +393,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 
 
 /*
@@ -300,6 +413,29 @@ var user1 = {
 
 //Code Here
 
+user2 = {
+  name: 'Tyler McGinnis2',
+    email: 'tylermcginnis33@gmail2.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
+user3 = {
+  name: 'Tyler McGinnis3',
+    email: 'tylermcginnis33@gmail3.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
+user4 = {
+  name: 'Tyler McGinnis4',
+    email: 'tylermcginnis33@gmail4.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniteLoop'
+}
+
+users[0] = user1;
+users[1] = user2;
+users[2] = user3;
+users[3] = user4;
 
 
 /*
@@ -313,9 +449,17 @@ var user1 = {
 */
 
 //Code Here
+users.forEach((val, i, arr) => {
+  if(val.email == 'tylermcginnis33@gmail.com'){
+    users.splice(i, 1);
+  }
+})
 
 
 
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
+
+
+
